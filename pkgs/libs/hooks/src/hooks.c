@@ -202,6 +202,12 @@ void __parsec_roi_begin() {
   #if ENABLE_M5_TRIGGER
   m5_work_begin(0,0);
   #endif
+
+  #if ENABLE_M5_CKPTS
+  printf(HOOKS_PREFIX" Recording ckpt...\n");
+  fflush(NULL);
+  m5_checkpoint(0,0);
+  #endif
 }
 
 
@@ -217,7 +223,6 @@ void __parsec_roi_end() {
   #if ENABLE_M5_TRIGGER
   m5_work_end(0,0);
   #endif
-  
 
   #if ENABLE_SIMICS_MAGIC
   MAGIC_BREAKPOINT;
