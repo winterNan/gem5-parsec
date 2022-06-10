@@ -10,7 +10,7 @@
 # even though all the dependencies are compiled to static libraries - glib, clib, libxml2 - (*.a) instead of dynamic libraries (*.so).
 # This script manually tunes the libtool env to statically link vips using all the *.a libs. 
 
-PARSEC_INSTALL_DIR="$HOME/Benchmarks/parsec/parsec-3.0"
+PARSEC_INSTALL_DIR="$HOME/parsec/parsec-3.0" # change this according to your need
 PARSEC_LIBS_DIR="$PARSEC_INSTALL_DIR/pkgs/libs"
 
 cd $PARSEC_INSTALL_DIR/pkgs/apps/vips/obj/amd64-linux.gcc-hooks/tools/iofuncs
