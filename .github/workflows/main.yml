@@ -35,6 +35,33 @@ jobs:
       - name: Build bodytrack
         run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p bodytrack
         
+      - name: Build canneal
+        run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p canneal
+        
+      - name: Build dedup
+        run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p dedup
+        
+      - name: Build facesim
+        run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p facesim
+        
+      - name: Build ferret
+        run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p ferret
+        
+      - name: Build fluidanimate
+        run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p fluidanimate
+        
+      - name: Build freqmine
+        run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p freqmine
+        
+      - name: Build streamcluster
+        run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p streamcluster
+        
+      - name: Build x264
+        run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p x264
+        
+      - name: Build swaptions
+        run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p swaptions
+        
       # Runs a set of commands using the runners shell
       # - name: Run a multi-line script
       #  run: |
