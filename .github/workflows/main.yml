@@ -62,11 +62,8 @@ jobs:
       # - name: Build swaptions
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p swaptions
       
-      - name: Build vips # build it once to generate libtool
-        run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p vips
-        
-      - name: Build vips # Special one. Need a customized sh script (not in the default PARSEC3.0 tar)
-        run: ./vips.static_link.sh
+      - name: Build vips # 1) build it once to generate libtool. 2) # build it twice with a customized sh script for static link (not in the default PARSEC3.0 tar)
+        run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p vips && ../ && ./vips.static_link.sh
         
       # Runs a set of commands using the runners shell
       # - name: Run a multi-line script
