@@ -33,11 +33,13 @@ jobs:
         run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p blackscholes
              && cd .. && sudo bash ./check_build.sh blackscholes
         
-      # - name: Build bodytrack
-      #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p bodytrack
+      - name: Build & Check bodytrack
+        run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p bodytrack
+             && cd .. && sudo bash ./check_build.sh bodytrack
         
-      # - name: Build canneal
-      #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p canneal
+      - name: Build & Check canneal
+        run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p canneal
+             && cd .. && sudo bash ./check_build.sh canneal
         
       # - name: Build dedup
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p dedup
