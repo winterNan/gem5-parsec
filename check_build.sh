@@ -78,6 +78,7 @@ else
 		echo -e ${GREEN}$info
 	elif [[ $info == *"dynamically"* ]]; then
 		echo -e ${RED}$info
+		exit 1
 	else
 		echo -e "${RED}Error${NC} while reading file type of $PARSEC_APP_DIR"
 	fi
