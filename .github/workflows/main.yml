@@ -31,7 +31,7 @@ jobs:
         
       - name: Build & Check blackscholes
         run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p blackscholes
-             && cd .. && sudo ./check_build.sh blackscholes
+             && cd .. && sudo bash ./check_build.sh blackscholes
         
       # - name: Build bodytrack
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p bodytrack
