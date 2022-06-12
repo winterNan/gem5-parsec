@@ -29,9 +29,9 @@ jobs:
       - name: Install packages
         run: sudo apt-get install build-essential m4 git python python-dev gettext libx11-dev libxext-dev xorg-dev unzip texinfo freeglut3-dev
         
-      - name: Check build blackscholes
+      - name: Build & Check blackscholes
         run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p blackscholes
-             && cd .. && ./check_build.sh blackscholes
+             && cd .. && sudo ./check_build.sh blackscholes
         
       # - name: Build bodytrack
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p bodytrack
