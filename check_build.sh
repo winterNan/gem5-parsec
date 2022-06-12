@@ -5,14 +5,12 @@
 #
 # Research group UART, Uppsala University
 #
-# The script automatically uses KVM to fast forward
-# a benchmark to the begining of ROI, then checkpoints
-# the execution. It can also resume later from the checkpoint 
-# using the resumt_ckpt command.
+# The script checks whether the program binary 
+# is statically linked or dynamically linked.
 #
 # Supported benchmarks: PARSEC-3.0
 
-PARSEC_APP_DIR="."
+PARSEC_INSTALL_DIR="."
 
 PROGRAM=$1
 PROGRAM_SET=("blackscholes" "bodytrack" "facesim" "ferret" "fluidanimate" "freqmine" "raytrace" "swaptions" "vips" "x264")
