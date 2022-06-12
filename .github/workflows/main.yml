@@ -31,47 +31,47 @@ jobs:
         
       # - name: Build & Check blackscholes
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p blackscholes
-             && cd .. && sudo bash ./check_build.sh blackscholes
+      #        && cd .. && sudo bash ./check_build.sh blackscholes
         
       # - name: Build & Check bodytrack
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p bodytrack
-             && cd .. && sudo bash ./check_build.sh bodytrack
+      #        && cd .. && sudo bash ./check_build.sh bodytrack
         
       # - name: Build & Check canneal
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p canneal
-             && cd .. && sudo bash ./check_build.sh canneal
+      #        && cd .. && sudo bash ./check_build.sh canneal
         
       # - name: Build & Check dedup
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p dedup
-             && cd .. && sudo bash ./check_build.sh dedup
+      #        && cd .. && sudo bash ./check_build.sh dedup
         
       # - name: Build & Check facesim
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p facesim
-             && cd .. && sudo bash ./check_build.sh facesim
+      #        && cd .. && sudo bash ./check_build.sh facesim
         
       # - name: Build & Check ferret
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p ferret
-             && cd .. && sudo bash ./check_build.sh ferret
+      #        && cd .. && sudo bash ./check_build.sh ferret
         
       # - name: Build & Check fluidanimate
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p fluidanimate
-             && cd .. && sudo bash ./check_build.sh fluidanimate
+      #        && cd .. && sudo bash ./check_build.sh fluidanimate
         
       # - name: Build & Check freqmine
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p freqmine
-             && cd .. && sudo bash ./check_build.sh freqmine
+      #        && cd .. && sudo bash ./check_build.sh freqmine
         
       # - name: Build & Check streamcluster
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p streamcluster
-             && cd .. && sudo bash ./check_build.sh streamcluster
+      #        && cd .. && sudo bash ./check_build.sh streamcluster
         
       # - name: Build & Check x264
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p x264
-             && cd .. && sudo bash ./check_build.sh x264
+      #        && cd .. && sudo bash ./check_build.sh x264
              
       # - name: Build & swaptions
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p swaptions
-             && cd .. && sudo bash ./check_build.sh swaptions
+      #        && cd .. && sudo bash ./check_build.sh swaptions
       
       - name: Build & Check vips # 1) build it once to generate libtool. 2) # build it twice with a customized sh script for static link (not in the default PARSEC3.0 tar)
         run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p vips && cd .. && ./vips.static_link.sh
