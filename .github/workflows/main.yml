@@ -26,8 +26,8 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      # - name: Install packages
-      #  run: sudo apt-get install build-essential m4 git python python-dev gettext libx11-dev libxext-dev xorg-dev unzip texinfo freeglut3-dev
+      - name: Install packages
+        run: sudo apt-get install build-essential m4 git python python-dev gettext libx11-dev libxext-dev xorg-dev unzip texinfo freeglut3-dev
         
       # - name: Build & Check blackscholes
       #   run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p blackscholes
