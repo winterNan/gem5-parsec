@@ -29,7 +29,7 @@ jobs:
       - name: Install packages
         run: sudo apt-get install build-essential m4 git python python-dev gettext libx11-dev libxext-dev xorg-dev unzip texinfo freeglut3-dev
         
-      - name: Build blackscholes
+      - name: Check build blackscholes
         run: source env.sh && cd bin && parsecmgmt -a build -c gcc-hooks -p blackscholes
              && cd .. && file ./pkgs/apps/blackscholes/inst/amd64-linux.gcc-hooks/bin/blackscholes
         
