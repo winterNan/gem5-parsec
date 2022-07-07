@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Commit 4d8e9f8 pushed by winterNan
+name: master branch
 
 # Controls when the workflow will run
 on:
