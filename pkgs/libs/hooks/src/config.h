@@ -138,6 +138,8 @@
 //void m5_dumpreset_stats(uint64_t ns_delay, uint64_t ns_period);
 //void m5_checkpoint(uint64_t ns_delay, uint64_t ns_period);
 //#endif
+/* Enable dumpresetstats */
+#define ENABLE_M5_DUMPRESET 1
 
 /** \brief Prefix for all output.
  *

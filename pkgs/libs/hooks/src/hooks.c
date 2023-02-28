@@ -167,9 +167,6 @@ void __parsec_bench_end() {
   #endif //DEBUG
 
   fflush(NULL);
-  #if ENABLE_TIMING
-  printf(HOOKS_PREFIX" Total time spent in ROI: %.3fs\n", time_end-time_begin);
-  #endif //ENABLE_TIMING
   printf(HOOKS_PREFIX" Terminating\n");
 }
 
@@ -185,6 +182,13 @@ void __parsec_roi_begin() {
   printf(HOOKS_PREFIX" Entering ROI\n");
   fflush(NULL);
 
+  #if ENABLE_M5_TRIGGER
+  m5_work_begin(0,0);
+  #endif
+  #if ENABLE_M5_DUMPRESET
+  m5_dump_reset_stats(0,0);
+  #endif
+
   #if ENABLE_TIMING
   struct timeval t;
   gettimeofday(&t,NULL);
@@ -198,10 +202,6 @@ void __parsec_roi_begin() {
   #if ENABLE_PTLSIM_TRIGGER
   ptlcall_switch_to_sim();
   #endif //ENABLE_PTLSIM_TRIGGER
-
-  #if ENABLE_M5_TRIGGER
-  m5_work_begin(0,0);
-  #endif
 
   #if ENABLE_M5_CKPTS
   printf(HOOKS_PREFIX" Recording ckpt...\n");
@@ -220,10 +220,6 @@ void __parsec_roi_end() {
   assert(num_bench_ends==0);
   #endif //DEBUG
 
-  #if ENABLE_M5_TRIGGER
-  m5_work_end(0,0);
-  #endif
-
   #if ENABLE_SIMICS_MAGIC
   MAGIC_BREAKPOINT;
   #endif //ENABLE_SIMICS_MAGIC
@@ -236,7 +232,16 @@ void __parsec_roi_end() {
   struct timeval t;
   gettimeofday(&t,NULL);
   time_end = (double)t.tv_sec+(double)t.tv_usec*1e-6;
+  printf(HOOKS_PREFIX" Total time spent in ROI: %.3fs\n", time_end-time_begin);
+  fflush(NULL);
   #endif //ENABLE_TIMING
+
+  #if ENABLE_M5_DUMPRESET
+  m5_dump_reset_stats(0,0);
+  #endif
+  #if ENABLE_M5_TRIGGER
+  m5_work_end(0,0);
+  #endif
 
   printf(HOOKS_PREFIX" Leaving ROI\n");
   fflush(NULL);
